@@ -8,5 +8,8 @@
 
 ## Files in /codes repository
 1. Visualization.R: R codes for creating different types static visualizations (e.g. heatmap, faceted line charts, spatial plots); continuously maintained and updated with codes for more plots.
+2. nominatim_extractor.ipynb: codes for generating geocodes for each business
+3. combining_jsons.ipynb: used to combine different sets of geocodes (broken down per certification type)
+4. Mapping.ipynb: codes to map each certified business
 
 
