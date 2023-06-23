@@ -8,6 +8,8 @@ require(gghighlight)
 #install.packages("Rcpp", dependencies = TRUE, INSTALL_opts = '--no-lock').
 #install.packages("lifest", dependencies = TRUE, INSTALL_opts = '--no-lock').
 
+#### Data Cleaning and Heatmap #####
+
 data = read.csv("Dashboard_Raw_Data.csv")
 
 # create year column and trim the dataset
@@ -89,11 +91,13 @@ ggsave(plot = plot_W_legend, file = "heatMap.jpg",
 #max(pdat$`2021`[!is.na(pdat$`2021`)])
 
 
+######## End of Section ###############
 
 
 
+###### Plot 2: Data Cleaning & Faceted Line Charts ########
 
-# Plot 2
+
 pdat_long = pdat %>% 
   mutate(Facet = ifelse(apply(pdat > 10, 1, function(j) any(j, na.rm = TRUE)), ">10", "Others")) %>%
   rownames_to_column(var = "Agency") %>% 
@@ -129,4 +133,63 @@ ggsave(plot = z, file = "Facet_Line.jpg",
 ggsave(plot = x, file = "Facet_Line_Highlights.jpg",
        width = 30, height = 20, 
        units = "cm", dpi = 300)
+
+########## End of Section ##############
+
+
+
+
+#### Plots 3: Data Cleaninig and By-county (zipcode) visualization
+
+data = read.csv("zipcode.csv")
+ref = data[,4:6]
+ref = ref[ref$City!="",]
+ref$Zip = as.character(ref$ZIP.Code)
+data = data[,1:3]
+type = levels(factor(data$Ethnicity))
+
+dat_AA = data[which(data$Ethnicity == "African-American (Black)" | data$Ethnicity == "African American"),]
+dat_APA = data[which(data$Ethnicity == "Asian-Pacific American"),]
+dat_ASA = data[which(data$Ethnicity=="Asian American"),]
+#data_AI = data[which(data$Ethnicity=="Asian Indian"),]
+data_HA = data[which(data$Ethnicity=="Hispanic American" | data$Ethnicity == "Hispanic/Latino"),]
+data_NA = data[which(data$Ethnicity=="Native American"),]
+
+# question: why are there type "Asian Indian" and "", what do they mean. 
+data_total = rbind(dat_AA, dat_APA, dat_ASA, data_HA, data_NA)
+
+dat = list(dat_AA, dat_APA, dat_ASA, data_HA, data_NA, data_total)
+
+
+require(maps)
+require(ggmap)
+require(mapdata)
+
+states = map_data("state")
+IL = subset(states, region %in% c("illinois"))
+counties = map_data("county")
+IL_county = subset(counties, region == "illinois")
+IL_county$County = toupper(IL_county$subregion)
+
+il_base = ggplot(data = IL, mapping = aes(x = long, y = lat, group = group)) + 
+  coord_fixed(1.3) + 
+  geom_polygon(color = "black", fill = NA) + 
+  theme_nothing() 
+
+names = c("African American", "Asian-Pacific American", "Asian American", "HispanicLatino", "Native American", "All")
+
+for (i in 1:6){
+  t = dat[[i]]
+  t$Zip = as.character(t$Zip)
+  t = t %>% left_join(ref)  %>% group_by(County) %>% summarise(n = n())
+  x = IL_county %>% left_join(t)
+  
+  il_plot = il_base + geom_polygon(data = x, color = "black", aes(fill = n)) +
+    theme(legend.position = "right")
+  
+  ggsave(plot = il_plot, file = paste0("byCounty_",names[i],".jpg"),
+         width = 30, height = 20, 
+         units = "cm", dpi = 300)
+}
+
 
