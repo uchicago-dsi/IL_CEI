@@ -6,4 +6,7 @@
 2. Directory_2023-06-20_241_nodupl.csv: cleaner version of list of certified businesses -no duplicates per address
 3. Dashboard_Raw_Data.xlsx: multi-fiscal year report including Budget, Exemptions, and Dollars Subject to Goal (DSG)
 
+## Files in /codes repository
+1. Visualization.R: R codes for creating different types static visualizations (e.g. heatmap, faceted line charts, spatial plots); continuously maintained and updated with codes for more plots.
+
 
