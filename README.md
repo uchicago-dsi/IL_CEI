@@ -11,5 +11,5 @@
 2. nominatim_extractor.ipynb: codes for generating geocodes for each business
 3. combining_jsons.ipynb: used to combine different sets of geocodes (broken down per certification type)
 4. Mapping.ipynb: codes to map each certified business
-
+Kennedy Coleman
 
