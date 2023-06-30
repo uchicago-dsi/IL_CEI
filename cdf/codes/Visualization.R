@@ -186,3 +186,28 @@ for (i in 1:6){
          width = 30, height = 20, 
          units = "cm", dpi = 300)
 }
+
+
+######### End of Section #########
+
+
+################## Subsection: Plot by Zipcode ###############
+require(usa)
+zcs = usa::zipcodes %>% subset(state == "IL")
+
+for (i in 1:6){
+  x = dat[[i]]  %>% mutate(zip = stringr::str_trim(as.character(Zip)))
+  y = x %>% left_join(zcs)
+  
+  il_plot = ggplot(data = IL, mapping = aes(x = long, y = lat)) + 
+    coord_fixed(1.3) + 
+    geom_polygon(color = "black", fill = NA, aes(group = group)) + 
+    theme_nothing()  + 
+    geom_polygon(data = IL_county, fill = NA, color = "black", aes(group = group)) +
+    geom_point(data = y, color = "blue", alpha = 0.1) +
+    theme(legend.position = "right") 
+  
+  ggsave(plot = il_plot, file = paste0("byZipCode_",names[i],".jpg"),
+         width = 30, height = 20, 
+         units = "cm", dpi = 300)
+}
