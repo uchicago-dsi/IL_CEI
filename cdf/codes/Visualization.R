@@ -141,25 +141,21 @@ ggsave(plot = x, file = "Facet_Line_Highlights.jpg",
 
 #### Plots 3: Data Cleaninig and By-county (zipcode) visualization
 
-data = read.csv("zipcode.csv")
-ref = data[,4:6]
-ref = ref[ref$City!="",]
-ref$Zip = as.character(ref$ZIP.Code)
-data = data[,1:3]
+data = read.csv("full_zipcode.csv") 
+# This file contains only 4 columns of the cleaned (no duplicates) certification data
+# The columns are: Company Namem,	Ethnicity,	Gender,	County
+data$County = toupper(data$County)
 type = levels(factor(data$Ethnicity))
+type
 
-dat_AA = data[which(data$Ethnicity == "African-American (Black)" | data$Ethnicity == "African American"),]
-dat_APA = data[which(data$Ethnicity == "Asian-Pacific American"),]
+dat_AA = data[which(data$Ethnicity == "African American"),]
 dat_ASA = data[which(data$Ethnicity=="Asian American"),]
-#data_AI = data[which(data$Ethnicity=="Asian Indian"),]
-data_HA = data[which(data$Ethnicity=="Hispanic American" | data$Ethnicity == "Hispanic/Latino"),]
-data_NA = data[which(data$Ethnicity=="Native American"),]
+dat_HA = data[which(data$Ethnicity=="Hispanic" | data$Ethnicity=="Hispanic/Latino"),]
+dat_NA = data[which(data$Ethnicity=="Native American"),]
+dat_F = data[which(data$Gender == "Female"),]
 
-# question: why are there type "Asian Indian" and "", what do they mean. 
-data_total = rbind(dat_AA, dat_APA, dat_ASA, data_HA, data_NA)
-
-dat = list(dat_AA, dat_APA, dat_ASA, data_HA, data_NA, data_total)
-
+data_total = rbind(dat_AA, dat_ASA, dat_HA, dat_NA, dat_F)
+dat = list(dat_AA, dat_ASA, dat_HA, dat_NA, dat_F, data_total)
 
 require(maps)
 require(ggmap)
@@ -176,12 +172,11 @@ il_base = ggplot(data = IL, mapping = aes(x = long, y = lat, group = group)) +
   geom_polygon(color = "black", fill = NA) + 
   theme_nothing() 
 
-names = c("African American", "Asian-Pacific American", "Asian American", "HispanicLatino", "Native American", "All")
+names = c("African American", "Asian American", "HispanicLatino", "Native American", "Female","All")
 
 for (i in 1:6){
   t = dat[[i]]
-  t$Zip = as.character(t$Zip)
-  t = t %>% left_join(ref)  %>% group_by(County) %>% summarise(n = n())
+  t = t %>% group_by(County) %>% summarise(n = n())
   x = IL_county %>% left_join(t)
   
   il_plot = il_base + geom_polygon(data = x, color = "black", aes(fill = n)) +
@@ -191,5 +186,3 @@ for (i in 1:6){
          width = 30, height = 20, 
          units = "cm", dpi = 300)
 }
-
-
