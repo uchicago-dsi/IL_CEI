@@ -154,7 +154,11 @@ dat_HA = data[which(data$Ethnicity=="Hispanic" | data$Ethnicity=="Hispanic/Latin
 dat_NA = data[which(data$Ethnicity=="Native American"),]
 dat_F = data[which(data$Gender == "Female"),]
 
-data_total = rbind(dat_AA, dat_ASA, dat_HA, dat_NA, dat_F)
+data_total = data[which(data$Gender == "Female" | 
+                          data$Ethnicity == "African American" |
+                          data$Ethnicity == "Asian American"| 
+                          data$Ethnicity=="Hispanic" | data$Ethnicity=="Hispanic/Latino"|
+                          data$Ethnicity=="Native American"),]
 dat = list(dat_AA, dat_ASA, dat_HA, dat_NA, dat_F, data_total)
 
 require(maps)
