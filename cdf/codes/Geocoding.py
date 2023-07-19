@@ -9,8 +9,9 @@ from folium import plugins
 
 #Part 1: Geocoding and Mapping BEP Certified Businesses
 
-#change this to absolute path ?
-df = pd.read_csv('C:/Users/user/Downloads/DSI/CEI/Directory.csv')
+
+url = 'https://github.com/uchicago-dsi/IL_CEI/tree/Angelica_Sun_main_update/cdf/data/input/Directory_BEP.csv'
+df = pd.read_csv(url)
 
 
 #Check stats
