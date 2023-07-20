@@ -1,9 +1,19 @@
-FROM --platform=linux/amd64 python:3.8-buster
-WORKDIR /tmp
-RUN apt update
-RUN apt install -y python3-pip python3-dev
+
+# Start with Python base image
+FROM python:3.8-slim
+
+# Create working directory
+WORKDIR /usr/src
+
+
+# Install Python packages
 COPY requirements.txt .
-RUN pip install -r requirements.txt
-ARG REPOPATH
-COPY scripts .
-CMD ["/tmp/eval-repo.sh"]
+RUN pip install --upgrade pip==21.3.1
+RUN pip install --no-cache-dir -r requirements.txt
+
+
+COPY scripts/
+
+
+# Run script
+CMD ["python3", "<my_script>.py"] # This is running as a Python script, not a module
