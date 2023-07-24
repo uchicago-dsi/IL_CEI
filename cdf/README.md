@@ -5,14 +5,14 @@ The state’s annual, aggregated aspirational goal is to spend at least 30% of i
 Group | Goal
 ------------- | -------------
 Minority Business Enterprise (MBE)  | 16%
-Women Business Enterprise  | 10%
+Women Business Enterprise (WBE)  | 10%
 Persons with Disability Business Enterprise (PBE) | 4%
 
 The state’s annual, aggregated aspirational goal for construction and professional services contracts is to spend not less than 20% of total dollars with BEP firms. This overall goal is allocated as follows: 
 Group | Goal
 ------------- | -------------
 Minority Business Enterprise (MBE)  | 11%
-Women Business Enterprise  | 7%
+Women Business Enterprise (WBE)  | 7%
 Persons with Disability Business Enterprise (PBE) | 2%
 
 
