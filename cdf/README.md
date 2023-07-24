@@ -29,7 +29,7 @@ This project aims to help CEI to:
 2. Increase BEP participation through analyzing IL demographics (general and business-related) through geospatial analysis, to identify where to potentially expand CEI's efforts (eg. stakeholder outreach, professional consultation, capacity building, new partnerships)
 3. Monitor goal by providing internal dashboard/tracker that will allow CEI to proactively see their goal achievement in a more frequent manner, and adjust their operational efforts throughout the fiscal year (work in progress)
 
-Community Data Fellows directly collaborate with Bruce Montgomery (Acting CEI Commissioner) during Spring and Summer 2023.
+Community Data Fellows directly collaborate with **Bruce Montgomery (Acting CEI Commissioner)** during Spring and Summer 2023.
 
 ## Files in /data/input directory:
 1. Directory_BEP.csv: list of certified businesses in the State of Illinois downloaded from <a href = "https://ceibep.diversitysoftware.com/">public online directory</a> on 06/20/2023
