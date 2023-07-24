@@ -18,20 +18,20 @@ This project aims to help CEI to:
 2. Increase BEP participation through analyzing IL demographics (general and business-related) through geospatial analysis, to identify where to potentially expand CEI's efforts (eg. stakeholder outreach, professional consultation, capacity building, new partnerships)
 3. Monitor goal by providing internal dashboard/tracker that will allow CEI to proactively see their goal achievement in a more frequent manner, and adjust their operational efforts throughout the fiscal year (work in progress)
 
-CDF directly collaborates with Bruce Montgomery (Acting CEI Commissioner) during Spring and Summer 2023.
+Community Data Fellows directly collaborate with Bruce Montgomery (Acting CEI Commissioner) during Spring and Summer 2023.
 
-## Files in /data/input repository:
+## Files in /data/input directory:
 1. Directory_BEP.csv: list of certified businesses in the State of Illinois downloaded from <a href = "https://ceibep.diversitysoftware.com/">public online directory</a> on 06/20/2023
 2. Directory_BEP_noduplicates.csv: cleaner version of list of certified businesses -no duplicates per address
 3. IL_census_data: population, education, income (work in progress)
 4. tl_2022_17_tract.shp: Illinois state shape file
 5. Dashboard_Raw_Data.xlsx: multi-fiscal year report including Budget, Exemptions, and Dollars Subject to Goal (DSG)
 
-## Files in /data/output repository:
+## Files in /data/output directory:
 1. certified_businesses_map.html: map of BEP certified businesses as of 06/20/2023
 2. 
 
-## Files in /codes repository
+## Files in /codes directory:
 1. Visualization.R: R codes for creating different types static visualizations (e.g. heatmap, faceted line charts, spatial plots); continuously maintained and updated with codes for more plots.
 2. Geocoding.py: codes for generating geocodes for each business
 3. Mapping.ipynb: codes to map each certified business
