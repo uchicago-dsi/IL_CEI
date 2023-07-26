@@ -34,9 +34,11 @@ Community Data Fellows directly collaborate with **Bruce Montgomery (Acting CEI 
 ## Files in /data/input directory:
 1. Directory_BEP.csv: list of certified businesses in the State of Illinois downloaded from <a href = "https://ceibep.diversitysoftware.com/">public online directory</a> on 06/20/2023
 2. Directory_BEP_noduplicates.csv: cleaner version of list of certified businesses -no duplicates per address
-3. IL_census_data: population, education, income (work in progress)
-4. tl_2022_17_tract.shp: Illinois state shape file
-5. Dashboard_Raw_Data.xlsx: multi-fiscal year report including Budget, Exemptions, and Dollars Subject to Goal (DSG)
+3. IL_census_data: Census data including population, education, income by census track. Data downloaded from <a href = "https://www.socialexplorer.com/explore-tables"> Social Explorer </a>
+4. county_business_patterns_2021: business-related statistics from census bureau. This includes number of establishments, employment, payroll, average wage, by geographic area, NAICS industry, and size of establishment. Data downloaded from <a href = "https://www.socialexplorer.com/explore-tables"> Social Explorer </a>
+5. tl_2022_17_tract.shp: Illinois state shape file by census track
+6. IL_bounds_county_Py.shp: Illinois state shape file by county
+7. Dashboard_Raw_Data.xlsx: multi-fiscal year report including Budget, Exemptions, and Dollars Subject to Goal (DSG)
 
 ## Files in /data/output directory:
 1. certified_businesses_map.html: map of BEP certified businesses as of 06/20/2023
@@ -50,5 +52,9 @@ Community Data Fellows directly collaborate with **Bruce Montgomery (Acting CEI 
 
 ## Google Drive: (insert link)
 1. 
+
+
+## How to Run this
+
 
 
