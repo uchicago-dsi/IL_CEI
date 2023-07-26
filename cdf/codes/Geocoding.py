@@ -1,39 +1,37 @@
 import pandas as pd
 import json
-import folium
 from geopy.geocoders import Nominatim
 import requests
-import time
-import matplotlib.pyplot as plt
-from folium import plugins
-
-#Part 1: Geocoding and Mapping BEP Certified Businesses
 
 
-url = 'https://github.com/uchicago-dsi/IL_CEI/tree/Angelica_Sun_main_update/cdf/data/input/Directory_BEP.csv'
-df = pd.read_csv(url)
+#Part 1. Cleaning: Keeping Addresses and Names only
+
+df = pd.read_csv("../data/input/Directory_BEP.csv")
+
+categories = ['VBE', 'VOSB', 'BEPD', 'PBE', 'SWS']
+#categories = ['MBE', 'WBE', 'WMBE', 'SDVOSB', 'VBE', 'VOSB', 'BEPD', 'PBE', 'SWS']
+
+def slicing_df(df):
+    """
+    This function reorganize the dataset by category type. The purpose of doing this is for easier geocoding and visualization
+    Input: raw pandas df
+    Output: Dictionary of Category_Type with list of tuples of Addresses and Company Names -- {Category1: [(Address1, Company1), (Address2, Company2)]...}
+    """
+    dataframes = {} 
+    for cat in categories:
+        filtered_df = df[df['Certification Type'] == cat] #filter data based on category
+        filtered_df = filtered_df[['Address', 'Company Name']] #keep Address and Company Name only
+        result_list = [tuple(row) for row in filtered_df.values] #
+        dataframes[cat]= result_list
+    return dataframes
 
 
-#Check stats
 
-category_counts = df['Certification Type'].value_counts()
-category_counts = category_counts.sort_values(ascending=True)
-ax=category_counts.plot(kind='barh')
-
-plt.xlabel('Count')
-plt.ylabel('Certification Type')
-plt.title('Certification Type Count')
-
-for i, v in enumerate(category_counts):
-    ax.text(v + 0.2, i, str(v), color='black', va='center')
-    
-plt.show()
-
-
+#Part 2: Geocoding 
 
 def extracting_location (addresses_name):
     """
-    input: address list
+    input: list of address and names
     output: geocodes of the addresses
     """
     info={}
@@ -56,26 +54,6 @@ def extracting_location (addresses_name):
 #suggested to breakdown per certification type
 
 
-def slicing_df(df):
-    """
-    """
-    categories = ['MBE', 'WBE', 'WMBE', 'SDVOSB', 'VBE', 'VOSB', 'BEPD', 'PBE', 'SWS']
-    dataframes = {}  # Dictionary to store the dataframes
-    for cat in categories:
-        cat_data = df.loc[df['Certification Type'] == cat]  # Filter data based on the category
-        print(cat, len(cat_data))
-        dataframes[cat] = cat_data  # Store the dataframe in the dictionary
-
-    # Access the individual dataframes
-    MBE_data = dataframes['MBE']
-    WBE_data = dataframes['WBE']
-    WMBE_data = dataframes['WMBE']
-    SDVOSB_data = dataframes['SDVOSB']
-    VBE_data = dataframes['VBE']
-    VOSB_data = dataframes['VOSB']
-    BEPD_data = dataframes['BEPD']
-    PBE_data = dataframes['PBE']
-    SWS_data = dataframes['SWS']
 
 
 
@@ -98,7 +76,7 @@ def converting_to_json(sliced_file):
 #optional -- Combine Json files for categories sliced and geocoded multiple times (due to geocoding limitation per run)
 
 
-        
+#Part 3: Mapping
         
 
         
