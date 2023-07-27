@@ -55,17 +55,15 @@ def extracting_location (addresses_name):
 
 
 
-
-
 def converting_to_json(sliced_file):
     """
-    this is to save files with geocodes to json
+    This is to save files with geocodes to json
     input: sliced df (for nominatim)
     output: json file (no return), only saving in the file path
     """
 
     extract=sliced_file
-    file_path = "/path_to_file.json"
+    file_path = "../data/output/geocoded_data.json"
     #udpate this file path
 
     # Open the file in write mode and save the dictionary as JSON
