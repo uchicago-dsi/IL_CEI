@@ -38,17 +38,18 @@ Community Data Fellows directly collaborate with **Bruce Montgomery (Acting CEI 
 4. county_business_patterns_2021: business-related statistics from census bureau. This includes number of establishments, employment, payroll, average wage, by geographic area, NAICS industry, and size of establishment. Data downloaded from <a href = "https://www.socialexplorer.com/explore-tables"> Social Explorer </a>
 5. tl_2022_17_tract.shp: Illinois state shape file by census track
 6. IL_bounds_county_Py.shp: Illinois state shape file by county
-7. Dashboard_Raw_Data.xlsx: multi-fiscal year report including Budget, Exemptions, and Dollars Subject to Goal (DSG)
+7. Dashboard_Raw_Data.xlsx: multi-fiscal year report including Budget, Exemptions, and Dollars Subject to Goal (DSG) --this is a file shared by CEI
 
 ## Files in /data/output directory:
 1. certified_businesses_map.html: map of BEP certified businesses as of 06/20/2023
 2. 
 
 ## Files in /codes directory:
-1. Visualization.R: R codes for creating different types static visualizations (e.g. heatmap, faceted line charts, spatial plots); continuously maintained and updated with codes for more plots.
-2. Geocoding.py: codes for generating geocodes for each business
-3. Mapping.ipynb: codes to map each certified business
-4. External_data.ipynb: codes for mapping census data (work in progress)
+1. Visualization.R: R codes for creating different types static visualizations (e.g. heatmap, faceted line charts, spatial plots); continuously maintained and updated with codes for more plots (**work in progress -to be converted to python**)
+2. Geocoding.py: codes for generating geocodes for each business (**work in progress -to be edited**)
+3. Mapping.ipynb: codes to map each certified business (**work in progress -to be migrated to main file**)
+4. External_data.ipynb: codes for mapping census data (**work in progress -to be migrated to main file**)
+5. business_patterns.ipynb: codes for mapping business patterns (**work in progress -to be migrated to main file**)
 
 ## Google Drive: (insert link)
 1. 
