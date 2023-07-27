@@ -51,11 +51,14 @@ Community Data Fellows directly collaborate with **Bruce Montgomery (Acting CEI 
 4. External_data.ipynb: codes for mapping census data (**work in progress -to be migrated to main file**)
 5. business_patterns.ipynb: codes for mapping business patterns (**work in progress -to be migrated to main file**)
 
-## Google Drive: (insert link)
+## Google Drive: (insert link) -**work in progress**
 1. 
 
 
-## How to Run this
-
+## How to Run this **work in progress**
+1. 
+2.
+3.
+4. 
 
 
