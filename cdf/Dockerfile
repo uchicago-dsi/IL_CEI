@@ -9,8 +9,8 @@ COPY requirements.txt .
 RUN pip install --upgrade pip==21.3.1
 RUN pip install --no-cache-dir -r requirements.txt
 
-# Copy the script files to the container's working directory
-COPY codes/ .
+# Copy the entire directory
+COPY . .
 
 # Run script
 CMD ["python3", "Geocoding.py"] # Replace "<my_script>.py" with the actual name of your Python script
