@@ -1,0 +1,107 @@
+{
+  "#1 Professional Cleaning Services": [
+    {
+      "place_id": 313695516,
+      "licence": "Data \u00a9 OpenStreetMap contributors, ODbL 1.0. https://osm.org/copyright",
+      "osm_type": "way",
+      "osm_id": 24115777,
+      "boundingbox": [
+        "41.848091240551",
+        "41.848191240551",
+        "-87.89151776492",
+        "-87.89141776492"
+      ],
+      "lat": "41.84814124055146",
+      "lon": "-87.89146776492046",
+      "display_name": "2205, Mayfair Avenue, Westchester, Proviso Township, Cook County, Illinois, 60154, United States",
+      "class": "place",
+      "type": "house",
+      "importance": -0.6199999999999999,
+      "category": "MBE"
+    }
+  ],
+  "'Bouche' Enterprises LLC": [
+    {
+      "place_id": 143489913,
+      "licence": "Data \u00a9 OpenStreetMap contributors, ODbL 1.0. https://osm.org/copyright",
+      "osm_type": "way",
+      "osm_id": 163342238,
+      "boundingbox": [
+        "41.9437002",
+        "41.9437652",
+        "-87.8128888",
+        "-87.8127069"
+      ],
+      "lat": "41.94374165",
+      "lon": "-87.81279771878613",
+      "display_name": "3511, North Osceola Avenue, Dunning, Chicago, Jefferson Township, Cook County, Illinois, 60634, United States",
+      "class": "building",
+      "type": "yes",
+      "importance": 0.7301,
+      "category": "MBE"
+    }
+  ],
+  "2 Sons LLC": [
+    {
+      "place_id": 313661746,
+      "licence": "Data \u00a9 OpenStreetMap contributors, ODbL 1.0. https://osm.org/copyright",
+      "osm_type": "way",
+      "osm_id": 24108018,
+      "boundingbox": [
+        "41.86205927535",
+        "41.86215927535",
+        "-87.873982264536",
+        "-87.873882264536"
+      ],
+      "lat": "41.86210927535003",
+      "lon": "-87.87393226453614",
+      "display_name": "10049, Drury Lane, Westchester, Proviso Township, Cook County, Illinois, 60154, United States",
+      "class": "place",
+      "type": "house",
+      "importance": -0.6199999999999999,
+      "category": "BEPD"
+    }
+  ],
+  "#9 Design, LLC": [
+    {
+      "place_id": 205123948,
+      "licence": "Data \u00a9 OpenStreetMap contributors, ODbL 1.0. https://osm.org/copyright",
+      "osm_type": "way",
+      "osm_id": 435383972,
+      "boundingbox": [
+        "41.889735",
+        "41.8897361",
+        "-87.9797471",
+        "-87.979139"
+      ],
+      "lat": "41.8897358",
+      "lon": "-87.9795894",
+      "display_name": "West Saint Charles Road, Villa Park, DuPage County, Illinois, 60181, United States",
+      "class": "highway",
+      "type": "secondary",
+      "importance": 0.91,
+      "category": "WBE"
+    }
+  ],
+  "@Veterans Construction Group, LLC.": [
+    {
+      "place_id": 313658653,
+      "licence": "Data \u00a9 OpenStreetMap contributors, ODbL 1.0. https://osm.org/copyright",
+      "osm_type": "way",
+      "osm_id": 31924827,
+      "boundingbox": [
+        "41.846544040885",
+        "41.846644040885",
+        "-87.690735342484",
+        "-87.690635342484"
+      ],
+      "lat": "41.84659404088485",
+      "lon": "-87.69068534248431",
+      "display_name": "2608, West 25th Street, Bohemian California, South Lawndale, Chicago, West Chicago Township, Cook County, Illinois, 60608, United States",
+      "class": "place",
+      "type": "house",
+      "importance": -0.41999999999999993,
+      "category": "SDVOSB"
+    }
+  ]
+}
