@@ -43,10 +43,17 @@ def extracting_location(data):
                 response = requests.get(url, timeout=5)
                 response.raise_for_status()
                 data = response.json()
+                if len(data) > 0:
+                     data[0]['category'] = cat
+                else: 
+                     continue
+          
                 info[name]=data
+      
             except requests.exceptions.RequestException as e:
                 continue
-        geocodes[cat] = info
+        geocodes.update(info)
+    
     return geocodes
 
 
@@ -57,31 +64,31 @@ def save_geocodes(data):
     input: extracted info
     output: json file
     '''
-    file_path = "C:/Users/user/Downloads/DSI/CEI/Geocode/geocoded_loc.json"
+    file_path_raw = "C:/Users/user/Downloads/DSI/CEI/Geocode/geocoded_loc_raw.json"
     new_data = extracting_location(data)
 
     try:
         # Step 1: Read existing JSON data from the file (if it exists)
-        with open(file_path, 'r') as json_file:
+        with open(file_path_raw, 'r') as json_file:
             existing_data = json.load(json_file)
     except FileNotFoundError:
         # If the file doesn't exist, start with an empty list
         existing_data = {}
+        
+   
+    existing_data_list = list(existing_data.items())
+    new_data_list = list(new_data.items())
 
-        
-        
-    # Step 2: Add new data to the existing data
-    for cat in categories:
-    existing_data[cat]
-        if item == new_data:
-            print("Data already exists. Not adding it again.")
-            return
-        
-    existing_data.append(new_data)
-
-    # Step 3: Write the updated data back to the JSON file
-    with open(file_path, 'w') as file:
-        json.dump(existing_data, file, indent=2)
+    #If new data is not in the existing data list, add it
+    for company in new_data_list:
+        if company not in existing_data_list:
+            existing_data_list.append(company)
+            
+    existing_data_updated = dict(existing_data_list)
+    
+    # Write the updated data back to the JSON file
+    with open(file_path_raw, 'w') as file:
+        json.dump(existing_data_updated, file, indent=2)
 
         
         
