@@ -130,5 +130,6 @@ def mapping(data):
     '''
 
     my_map.get_root().html.add_child(folium.Element(legend_html))
+    my_map.save('certified_businesses.html')
 
     return my_map
