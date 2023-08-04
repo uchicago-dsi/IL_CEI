@@ -66,10 +66,13 @@ def selecting_keys(data):
     colors = []
     for i, val in enumerate(data_list):
         names.append(data_list[i][0])
-        lats.append(data_list[i][1][0]['lat'])
-        lons.append(data_list[i][1][0]['lon'])
-        cats.append(data_list[i][1][0]['category'])
-        colors.append(color[data_list[i][1][0]['category']])
+        if len(data_list[i][1]) > 0:
+            lats.append(data_list[i][1][0]['lat'])
+            lons.append(data_list[i][1][0]['lon'])
+            cats.append(data_list[i][1][0]['category'])
+            colors.append(color[data_list[i][1][0]['category']])
+        else:
+            continue
     
     zipped_data = zip(lats, lons, names, colors, cats)
     return zipped_data
