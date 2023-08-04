@@ -62,3 +62,38 @@ Community Data Fellows directly collaborate with **Bruce Montgomery (Acting CEI 
 4. 
 
 
+Repository Structure:
+│   Dockerfile
+│   README.md
+│   requirements.txt
+│   
+├───codes
+│   │   Visualization.R
+│   │   
+│   └───utils
+│           cleaning.py
+│           geocoding.py
+│           tree_output.txt
+│           vizualizing.py
+│           __init__.py
+│           
+├───data
+│   ├───cache
+│   ├───clean
+│   │       certified_businesses_map.html
+│   │       cleaned_raw.csv
+│   │       combined_df.csv
+│   │       geocoded_loc_raw.json
+│   │       
+│   └───raw
+│           directory_certified_businesses.csv
+│           IL_BNDY_County_Py.shp
+│           IL_business_data.csv
+│           IL_census_data.csv
+│           test_data_directory.csv
+│           
+└───notebooks
+        bep_demographics_and_business.ipynb
+        bep_geocoding.ipynb
+        bep_mapping.ipynb
+
