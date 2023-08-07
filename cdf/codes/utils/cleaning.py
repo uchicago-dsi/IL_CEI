@@ -23,7 +23,7 @@ def merge_census_business(census, business):
     # Convert all data in the DataFrame into numbers
     for col in combined_df.columns[1:]:
         combined_df[col] = pd.to_numeric(combined_df[col], errors='coerce')
-    combined_df.to_csv("C:/Users/user/Downloads/DSI/CEI v2/combined_df.csv", index=False)
+    combined_df.to_csv("../data/clean/combined_df.csv", index=False)
     return combined_df
 
 
@@ -31,5 +31,5 @@ def merge_census_business(census, business):
 def merge_geo(census, business, bounds):
     merged_df = merge_census_business(census,business).merge(bounds, on="CO_FIPS", how='outer')
     merged_gdf = gpd.GeoDataFrame(merged_df, geometry=merged_df.geometry)
-    merged_gdf.to_csv("C:/Users/user/Downloads/DSI/CEI v2/cleaned_raw.csv")
+    merged_gdf.to_csv("../data/clean/cleaned_raw.csv")
     return merged_gdf

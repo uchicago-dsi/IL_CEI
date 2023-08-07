@@ -3,7 +3,7 @@ import json
 from geopy.geocoders import Nominatim
 import requests
 
-data = pd.read_csv('C:/Users/user/Downloads/DSI/CEI/Directory.csv')
+data = pd.read_csv("..data/raw/directory_certified_businesses.csv") 
 
 #categories = ['VBE', 'VOSB', 'BEPD', 'PBE', 'SWS']
 categories = ['MBE', 'WBE', 'WMBE', 'SDVOSB', 'VBE', 'VOSB', 'BEPD', 'PBE', 'SWS']
@@ -64,7 +64,7 @@ def save_geocodes(data):
     input: extracted info
     output: json file
     '''
-    file_path_raw = "C:/Users/user/Downloads/DSI/CEI/Geocode/geocoded_loc_raw.json"
+    file_path_raw = "../data/clean/geocoded_loc_raw.json"
     new_data = extracting_location(data)
 
     try:

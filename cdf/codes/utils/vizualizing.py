@@ -7,8 +7,6 @@ from geopy.geocoders import Nominatim
 from folium import plugins
 
 
-# cleaned_data = gpd.read_file("C:/Users/user/Downloads/DSI/CEI v2/cleaned_raw.csv")
-
 def plotting(cleaned_data):
 
     #variable of interest
