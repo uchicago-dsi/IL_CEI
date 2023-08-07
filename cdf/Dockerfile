@@ -13,4 +13,5 @@ RUN pip install --no-cache-dir -r requirements.txt
 COPY . .
 
 # Run script
-CMD ["python3", "cleaning.py", "geocoding.py", "vizualizing.py"]
+CMD ["python3", "-m", "utils.cleaning.py", "utils.geocoding.py", "utils.vizualizing.py"]
+
