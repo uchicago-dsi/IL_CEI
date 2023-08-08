@@ -6,6 +6,10 @@ import folium
 from geopy.geocoders import Nominatim
 from folium import plugins
 
+import os
+import sys
+sys.path.append(os.path.dirname(os.path.abspath(__file__)))
+
 
 def plotting(cleaned_data):
 

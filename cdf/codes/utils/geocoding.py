@@ -3,6 +3,10 @@ import json
 from geopy.geocoders import Nominatim
 import requests
 
+import os
+import sys
+sys.path.append(os.path.dirname(os.path.abspath(__file__)))
+
 data = pd.read_csv("../data/raw/directory_certified_businesses.csv") 
 
 #categories = ['VBE', 'VOSB', 'BEPD', 'PBE', 'SWS']
