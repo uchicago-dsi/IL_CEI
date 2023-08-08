@@ -3,7 +3,7 @@ import json
 from geopy.geocoders import Nominatim
 import requests
 
-data = pd.read_csv("..data/raw/directory_certified_businesses.csv") 
+data = pd.read_csv("../data/raw/directory_certified_businesses.csv") 
 
 #categories = ['VBE', 'VOSB', 'BEPD', 'PBE', 'SWS']
 categories = ['MBE', 'WBE', 'WMBE', 'SDVOSB', 'VBE', 'VOSB', 'BEPD', 'PBE', 'SWS']
